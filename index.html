@@ -3,78 +3,135 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Samsung Galaxy S26 Pre-Orders</title>
+  <title>Samsung Galaxy S26 pre-order announcement</title>
 
   <style>
-    :root { color-scheme: dark; }
-
-    body {
-      margin: 0;
-      background: #070b1a;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      display: grid;
-      place-items: center;
-      min-height: 100vh;
+    :root{
+      --bg1:#060A16;
+      --bg2:#0B1440;
+      --card:#0A0F22CC;
+      --border:rgba(255,255,255,.14);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.70);
+      --muted2:rgba(255,255,255,.60);
+      --shadow: 0 24px 80px rgba(0,0,0,.55);
+      --radius: 26px;
     }
 
-    .wrap {
-      width: min(980px, 92vw);
-      padding: 18px 0 28px;
-      text-align: center;
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:34px 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 70% 30%, rgba(130,160,255,.25), transparent 55%),
+        radial-gradient(900px 500px at 20% 70%, rgba(190,120,255,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
     }
 
-    img.hero {
-      width: 100%;
-      height: auto;
-      border-radius: 16px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.55);
-      display: block;
+    .wrap{
+      width:min(720px, 100%);
+      display:flex;
+      justify-content:center;
     }
 
-    .heroBox {
-      position: relative;
+    .card{
+      width:min(560px, 100%);
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
-    /* Visual-only button (not clickable) */
-    .cta {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 10%;
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-weight: 700;
-      letter-spacing: .2px;
-      background: linear-gradient(90deg, rgba(135,206,255,.95), rgba(166,132,255,.95));
-      color: #0b1022;
-      box-shadow: 0 10px 24px rgba(0,0,0,.35);
-      border: 1px solid rgba(255,255,255,.18);
-      pointer-events: none; /* disables clicking */
+    .header{
+      padding:22px 22px 10px;
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
 
-    .note {
-      margin-top: 10px;
-      font-size: 13px;
-      opacity: .75;
+    .title{
+      margin:0;
+      font-size:22px;
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+
+    .hero{
+      padding:18px 22px 12px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .hero img{
+      width:100%;
+      max-width:520px;
+      height:auto;
+      border-radius:20px;
+      display:block;
+    }
+
+    .mid{
+      padding:10px 22px 22px;
+      text-align:center;
+    }
+
+    .cta{
+      display:inline-block;
+      padding:14px 26px;
+      border-radius:999px;
+      border:0;
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:.2px;
+      color:#0A0F22;
+      background: linear-gradient(90deg, #79C6FF, #9B7BFF);
+      box-shadow: 0 18px 50px rgba(125,160,255,.25);
+      cursor: default; /* not clickable */
+      user-select:none;
+    }
+
+    .cta:active{ transform: translateY(0); }
+
+    .footer{
+      padding:14px 22px 18px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:var(--muted2);
+      font-size:16px;
+    }
+
+    .note{
+      margin:8px 0 0;
+      font-size:14px;
+      color:var(--muted);
     }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-
-    <div class="heroBox">
-      <img class="hero" src="hero.png" alt="Samsung Galaxy S26 pre-order announcement" />
-
-      <div class="cta">
-        Pre-order now
+  <div class="wrap">
+    <main class="card">
+      <div class="header">
+        <h1 class="title">Samsung Galaxy S26 pre-order announcement</h1>
       </div>
-    </div>
 
-    <div class="note">
-      Pre-orders for the S26 series end on 10th March.
-    </div>
+      <div class="hero">
+        <!-- Make sure the image file in your repo is exactly: hero.png -->
+        <img src="hero.png" alt="Galaxy S26 Ultra" />
+      </div>
 
-  </main>
+      <div class="mid">
+        <div class="cta" aria-label="Pre-order now">Pre-order now</div>
+        <p class="note">Pre-orders for the S26 series end on 10th March.</p>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
