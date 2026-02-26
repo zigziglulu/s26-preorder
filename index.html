@@ -13,12 +13,12 @@
       --border:rgba(255,255,255,.14);
       --text:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.70);
-      --muted2:rgba(255,255,255,.60);
       --shadow: 0 24px 80px rgba(0,0,0,.55);
       --radius: 26px;
     }
 
     *{ box-sizing:border-box; }
+
     body{
       margin:0;
       min-height:100vh;
@@ -26,18 +26,12 @@
       align-items:center;
       justify-content:center;
       padding:34px 16px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
       color:var(--text);
       background:
         radial-gradient(1200px 600px at 70% 30%, rgba(130,160,255,.25), transparent 55%),
         radial-gradient(900px 500px at 20% 70%, rgba(190,120,255,.18), transparent 55%),
         linear-gradient(180deg, var(--bg1), var(--bg2));
-    }
-
-    .wrap{
-      width:min(720px, 100%);
-      display:flex;
-      justify-content:center;
     }
 
     .card{
@@ -52,7 +46,7 @@
     }
 
     .header{
-      padding:22px 22px 10px;
+      padding:22px;
       border-bottom:1px solid rgba(255,255,255,.08);
     }
 
@@ -60,77 +54,53 @@
       margin:0;
       font-size:22px;
       font-weight:600;
-      letter-spacing:.2px;
     }
 
     .hero{
-      padding:18px 22px 12px;
-      display:flex;
-      justify-content:center;
+      padding:22px;
+      text-align:center;
     }
 
     .hero img{
       width:100%;
-      max-width:520px;
-      height:auto;
       border-radius:20px;
-      display:block;
+      transition:transform .25s ease, box-shadow .25s ease;
+      cursor:pointer;
     }
 
-    .mid{
-      padding:10px 22px 22px;
-      text-align:center;
+    .hero img:hover{
+      transform:scale(1.02);
+      box-shadow:0 20px 60px rgba(120,150,255,.35);
     }
-
-    .cta{
-      display:inline-block;
-      padding:14px 26px;
-      border-radius:999px;
-      border:0;
-      font-size:18px;
-      font-weight:700;
-      letter-spacing:.2px;
-      color:#0A0F22;
-      background: linear-gradient(90deg, #79C6FF, #9B7BFF);
-      box-shadow: 0 18px 50px rgba(125,160,255,.25);
-      cursor: default; /* not clickable */
-      user-select:none;
-    }
-
-    .cta:active{ transform: translateY(0); }
 
     .footer{
-      padding:14px 22px 18px;
+      padding:18px;
       text-align:center;
-      border-top:1px solid rgba(255,255,255,.08);
-      color:var(--muted2);
-      font-size:16px;
-    }
-
-    .note{
-      margin:8px 0 0;
-      font-size:14px;
+      font-size:15px;
       color:var(--muted);
+      border-top:1px solid rgba(255,255,255,.08);
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <main class="card">
-      <div class="header">
-        <h1 class="title">Samsung Galaxy S26 pre-order announcement</h1>
-      </div>
+  <main class="card">
 
-      <div class="hero">
-        <!-- Make sure the image file in your repo is exactly: hero.png -->
-        <img src="hero.png" alt="Galaxy S26 Ultra" />
-      </div>
+    <div class="header">
+      <h1 class="title">Samsung Galaxy S26 pre-order announcement</h1>
+    </div>
 
-      <div class="mid">
-        <p class="note">Pre-orders for the S26 series end on 10th March.</p>
-      </div>
-    </main>
-  </div>
+    <div class="hero">
+      <a href="https://www.samsung.com/in/smartphones/galaxy-s26-ultra/buy/?cid=in_pd_pmax_google_gs26u_ongoing_gs26u-q126-pmax-inmarket-searchtheme-maxcon-lti-pfm_multi_product-kv-1ur-590000l-2026&gad_source=1&gad_campaignid=23603394401&gbraid=0AAAAADm5iQVgU3eCQkljPsXy0zc4N9FgW&gclid=CjwKCAiA-__MBhAKEiwASBmsBMiZz3G-iI2_ZEW2tygpW-jpv263-KbtTYac4ryW1GBa9-YpJ4JFOBoCUeIQAvD_BwE"
+         target="_blank">
+        <img src="hero.png" alt="Galaxy S26 Ultra Pre-order" />
+      </a>
+    </div>
+
+    <div class="footer">
+      Pre-orders for the S26 series end on 10th March.
+    </div>
+
+  </main>
 </body>
 </html>
